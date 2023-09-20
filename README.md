@@ -29,5 +29,5 @@ To run EzMGAN, you'll need the following prerequisites:
 3. Train your custom GAN model
 4. Generate music with EzMGAN
   ```shell
-  python test.py
+  python test_model.py
   ```
