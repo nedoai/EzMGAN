@@ -15,3 +15,5 @@ gen_preview = 1000 # After each given number of epochs there will be a demonstra
 inf_about_each_epoch = 100 # Output of losses after a given number of passed epochs
 
 audio_train_file = r"small_data/original_sound_-_laydshanks-QeqBfiLl.mp3" # Choice your audio path
+
+data_dir = 'small_data' # Set your dir
