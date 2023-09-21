@@ -4,7 +4,7 @@ import numpy as np
 import os
 import librosa
 import soundfile as sf
-from cfg import latent_dim, num_epochs, batch_size, learning_rate, fixed_length, gen_preview, inf_about_each_epoch, data_dir, samplerate
+from cfg import latent_dim, num_epochs, batch_size, learning_rate, fixed_length, gen_preview, inf_about_each_epoch, data_dir, samplerate, audio_train_file
 
 def load_and_preprocess_audio(file_path, target_sr=samplerate):
     audio, sr = librosa.load(file_path, sr=target_sr)
@@ -68,9 +68,10 @@ for epoch in range(num_epochs):
     for _ in range(len(audio_files) // batch_size):
         batch_audio_data = []
         for _ in range(batch_size):
-            audio_file = np.random.choice(audio_files) # Rand choice file. Idk why
-            audio_path = os.path.join(data_dir, audio_file)
-            audio, _ = librosa.load(audio_path, sr=samplerate)
+            # audio_file = np.random.choice(audio_files) # Rand choice file. Idk why
+            audio_file = audio_train_file
+            # audio_path = os.path.join(data_dir, audio_file)
+            audio, _ = librosa.load(audio_file, sr=samplerate)
             
             if len(audio) < fixed_length:
                 audio = np.pad(audio, (0, fixed_length - len(audio)))
