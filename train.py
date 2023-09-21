@@ -4,7 +4,7 @@ import numpy as np
 import os
 import librosa
 import soundfile as sf
-from cfg import latent_dim, num_epochs, batch_size, learning_rate, fixed_length, gen_preview, inf_about_each_epoch, data_dir, samplerate, audio_train_file
+from cfg import latent_dim, num_epochs, batch_size, learning_rate, fixed_length, gen_preview, inf_about_each_epoch, samplerate, audio_train_file, data_dir
 
 def load_and_preprocess_audio(file_path, target_sr=samplerate):
     audio, sr = librosa.load(file_path, sr=target_sr)
