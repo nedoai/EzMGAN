@@ -61,10 +61,6 @@ audio_files = os.listdir(data_dir)
 for epoch in range(num_epochs):
     gen_loss_sum = 0.0
     disc_loss_sum = 0.0
-
-    if len(audio_files) < batch_size:
-        raise ValueError(f"Audio files smaller than the set batch_size\n\nAudios: {len(audio_files)}\nBatch_Size: {batch_size}")
-
     for _ in range(len(audio_files) // batch_size):
         batch_audio_data = []
         for _ in range(batch_size):
