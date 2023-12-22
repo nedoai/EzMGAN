@@ -2,7 +2,7 @@ latent_dim = 100 # noise vector. Highest vector - better sound
 
 num_epochs = 10000
 
-batch_size = 2 # set the value equal to the number of audio files
+batch_size = 2 # Batch Size
 
 learning_rate = 0.0002 #lr
 
